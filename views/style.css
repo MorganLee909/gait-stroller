@@ -106,3 +106,51 @@ header{
         ul{
             text-align: left;
         }
+
+@media screen and (max-width: 1000px){
+    .mainContent{
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        padding-top: 25px;
+        width: 100%;
+    }
+
+        .mainContent img{
+            width: 90%;
+        }
+
+        .mainContentRight{
+            max-width: 90%;
+            text-align: justify;
+        }
+
+        input{
+            max-width: 150px;
+        }
+
+        form{
+            align-items: center;
+        }
+
+        .button{
+            padding: 0 5px;
+        }
+
+        .extraInfo{
+            flex-direction: column;
+            align-items: center;
+        }
+
+            .infoItem{
+                width: 85%;
+                border: 1px solid black;
+                border-radius: 10px;
+                padding: 5px;
+                margin: 5px;
+            }
+
+                ul{
+                    margin-left: 20px;
+                }
+}
