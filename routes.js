@@ -1,8 +1,8 @@
 const phaseOne = require("./controllers/phaseOne.js");
 
 module.exports = function(app){
-    app.get("/", ()=>{
-        console.log("main");
+    app.get("/", (req, res)=>{
+        return res.redirect("/p1m2549");
     });
 
     app.get("/p1m2549", phaseOne.m2549);
