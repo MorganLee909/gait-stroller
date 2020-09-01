@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const PhaseOneSchema = new mongoose.Schema({
-    firstName: String,
+    name: String,
     email: String,
     zipCode: String,
     pageVisitied: String,

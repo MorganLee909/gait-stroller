@@ -118,7 +118,7 @@ module.exports = {
 
     formSubmit: function(req, res){
         new PhaseOne({
-            firstName: req.body.name,
+            name: req.body.name,
             email: req.body.email,
             zipCode: req.body.zipCode,
             pageVisited: req.body.page,
