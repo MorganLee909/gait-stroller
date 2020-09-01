@@ -1,6 +1,7 @@
 const phaseOne = require("./controllers/phaseOne.js");
 const phaseTwo = require("./controllers/phaseTwo.js");
 const phaseThree = require("./controllers/phaseThree.js");
+const phaseFour = require("./controllers/phaseFour.js");
 
 module.exports = function(app){
     app.get("/", (req, res)=>{
@@ -33,4 +34,10 @@ module.exports = function(app){
     app.get("/p3w2549bvp3", phaseThree.boulderPropThree);
     app.get("/p3w2549pvp3", phaseThree.portlandPropThree);
     app.post("/phasethree", phaseThree.formSubmit);
+
+    app.get("/p4w2549sns", phaseFour.seattleNoSocial);
+    app.get("/p4w2549sws", phaseFour.seattleWithSocial);
+    app.get("/p4w2549pns", phaseFour.portlandNoSocial);
+    app.get("/p4w2549pws", phaseFour.portlandWithSocial);
+    app.post("/phasefour", phaseFour.formSubmit);
 }

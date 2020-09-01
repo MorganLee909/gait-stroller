@@ -148,7 +148,7 @@ module.exports = {
 
         phaseTwo.save()
             .then((phaseTwo)=>{
-                req.session.message = "Thanks for signin up!";
+                req.session.message = "Thanks for signing up!";
                 req.session.success = true;
             })
             .catch((err)=>{

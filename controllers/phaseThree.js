@@ -1,6 +1,5 @@
 const Activity = require("../models/activity.js");
 const PhaseThree = require("../models/phaseThree.js");
-const phaseTwo = require("../models/phaseTwo.js");
 
 module.exports = {
     seattlePropOne: function(req, res){
@@ -186,8 +185,8 @@ module.exports = {
         phaseThree.gift = (req.body.gift === "on") ? true : false;
 
         phaseThree.save()
-            .then((phaseTwo)=>{
-                req.session.message = "Thanks for signin up!";
+            .then((phaseThree)=>{
+                req.session.message = "Thanks for signing up!";
                 req.session.success = true;
             })
             .catch((err)=>{
