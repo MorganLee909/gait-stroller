@@ -5,10 +5,11 @@ module.exports = function(app){
         console.log("main");
     });
 
-    app.get("/m2549", phaseOne.m2549);
-    app.get("/m5064", phaseOne.m5064);
-    app.get("/m65", phaseOne.m65);
-    app.get("/w2549", phaseOne.w2549);
-    app.get("/w5064", phaseOne.w5064);
-    app.get("/w65", phaseOne.w65);
+    app.get("/p1m2549", phaseOne.m2549);
+    app.get("/p1m5064", phaseOne.m5064);
+    app.get("/p1m65", phaseOne.m65);
+    app.get("/p1w2549", phaseOne.w2549);
+    app.get("/p1w5064", phaseOne.w5064);
+    app.get("/p1w65", phaseOne.w65);
+    app.post("/phaseone", phaseOne.formSubmit);
 }

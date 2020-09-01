@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const session = require("cookie-session");
 const compression = require("compression");
 
 const app = express();
@@ -17,6 +18,12 @@ function requireHTTPS(req, res, next) {
 
 app.use(requireHTTPS);
 app.use(compression());
+app.use(session({
+    secret: "my super secrete app secret",
+    cookie: {secure: false},
+    saveUninitialized: true,
+    resave: false
+}));
 app.use(express.static(__dirname + "/views"));
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());

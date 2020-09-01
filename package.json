@@ -21,6 +21,7 @@
   "homepage": "https://github.com/MorganLee909/gait-stroller#readme",
   "dependencies": {
     "compression": "^1.7.4",
+    "cookie-session": "^1.4.0",
     "ejs": "^3.1.5",
     "express": "^4.17.1",
     "mongoose": "^5.10.2"
