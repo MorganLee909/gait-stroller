@@ -124,14 +124,17 @@ module.exports = {
             pageVisited: req.body.page,
             dateTime: new Date(),
             ipAddr: req.header("x-forwarded-for") || req.connection.remoteAddress
-        }).save()
+        })
+            .save()
             .then((phaseOne)=>{
                 req.session.message = "Thanks for signing up!";
                 req.sesssion.success = true;
-                return res.redirect(`/${req.body.page}`);
-            }).catch((err)=>{
+            })
+            .catch((err)=>{
                 req.session.message = "Unable to save your information, please try again";
                 req.session.success = false;
+            })
+            .finally(()=>{
                 return res.redirect(`/${req.body.page}`);
             });
     }

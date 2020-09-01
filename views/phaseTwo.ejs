@@ -28,7 +28,7 @@
                 <% }else{ %>
                     <h2>Learn More!</h2>
 
-                    <form action="/phaseone" method="post">
+                    <form action="/phasetwo" method="post">
                         <label>Name:
                             <input type="text" name="name" required>
                         </label>
@@ -37,8 +37,8 @@
                             <input type="email" name="email" required>
                         </label>
 
-                        <label>Zip Code:
-                            <input type="text" name="zipCode" required>
+                        <label>Interested as a gift?
+                            <input type="checkbox" name="gift">
                         </label>
 
                         <input type="hidden" name="page" value="<%=page%>">
