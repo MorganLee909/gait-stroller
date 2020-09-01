@@ -21,6 +21,120 @@ module.exports = {
         return res.render("./phaseTwo.ejs", data);
     },
 
+    maleGroupTwo: function(req, res){
+        new Activity({
+            ipAddr: req.header("x-forwarded-for") || req.connection.remoteAddress,
+            dateTime: new Date(),
+            pageVisited: "p2g2m5064"
+        }).save().catch(()=>{});
+
+        let data = {
+            page: "p2g2m5064",
+            message: req.session.message,
+            success: req.session.success
+        }
+
+        req.session.message = undefined;
+        req.session.success = undefined;
+
+        return res.render("./phaseTwo.ejs", data);
+    },
+
+    maleGroupThree: function(req, res){
+        new Activity({
+            ipAddr: req.header("x-forwarded-for") || req.connection.remoteAddress,
+            dateTime: new Date(),
+            pageVisited: "p2g3m5064"
+        }).save().catch(()=>{});
+
+        let data = {
+            page: "p2g3m5064",
+            message: req.session.message,
+            success: req.session.success
+        }
+
+        req.session.message = undefined;
+        req.session.success = undefined;
+
+        return res.render("./phaseTwo.ejs", data);
+    },
+
+    femaleGroupOne: function(req, res){
+        new Activity({
+            ipAddr: req.header("x-forwarded-for") || req.connection.remoteAddress,
+            dateTime: new Date(),
+            pageVisited: "p2g1w2549"
+        }).save().catch(()=>{});
+
+        let data = {
+            page: "p2g1w2549",
+            message: req.session.message,
+            success: req.session.success
+        }
+
+        req.session.message = undefined;
+        req.session.success = undefined;
+
+        return res.render("./phaseTwo.ejs", data);
+    },
+
+    femaleGroupTwo: function(req, res){
+        new Activity({
+            ipAddr: req.header("x-forwarded-for") || req.connection.remoteAddress,
+            dateTime: new Date(),
+            pageVisited: "p2g2w2549"
+        }).save().catch(()=>{});
+
+        let data = {
+            page: "p2g2w2549",
+            message: req.session.message,
+            success: req.session.success
+        }
+
+        req.session.message = undefined;
+        req.session.success = undefined;
+
+        return res.render("./phaseTwo.ejs", data);
+    },
+
+    femaleGroupTwo: function(req, res){
+        new Activity({
+            ipAddr: req.header("x-forwarded-for") || req.connection.remoteAddress,
+            dateTime: new Date(),
+            pageVisited: "p2g2w2549"
+        }).save().catch(()=>{});
+
+        let data = {
+            page: "p2g2w2549",
+            message: req.session.message,
+            success: req.session.success
+        }
+
+        req.session.message = undefined;
+        req.session.success = undefined;
+
+        return res.render("./phaseTwo.ejs", data);
+    },
+
+    femaleGroupThree: function(req, res){
+        new Activity({
+            ipAddr: req.header("x-forwarded-for") || req.connection.remoteAddress,
+            dateTime: new Date(),
+            pageVisited: "p2g3w2549"
+        }).save().catch(()=>{});
+
+        let data = {
+            page: "p2g3w2549",
+            message: req.session.message,
+            success: req.session.success
+        }
+
+        req.session.message = undefined;
+        req.session.success = undefined;
+
+        return res.render("./phaseTwo.ejs", data);
+    },
+
     formSubmit: function(req, res){
         let phaseTwo = new PhaseTwo({
             name: req.body.name,

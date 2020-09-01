@@ -15,10 +15,10 @@ module.exports = function(app){
     app.post("/phaseone", phaseOne.formSubmit);
 
     app.get("/p2g1m5064", phaseTwo.maleGroupOne);
-    // app.get("/p2g2m5064", phaseTwo.maleGroupTwo);
-    // app.get("/p2g3m5064", phaseTwo.maleGroupThree);
-    // app.get("/p2g1w2549", phaseTwo.femaleGroupOne);
-    // app.get("/p2g2w2549", phaseTwo.femaleGroupTwo);
-    // app.get("/p2g3w2549", phaseTwo.femaleGroupThree);
+    app.get("/p2g2m5064", phaseTwo.maleGroupTwo);
+    app.get("/p2g3m5064", phaseTwo.maleGroupThree);
+    app.get("/p2g1w2549", phaseTwo.femaleGroupOne);
+    app.get("/p2g2w2549", phaseTwo.femaleGroupTwo);
+    app.get("/p2g3w2549", phaseTwo.femaleGroupThree);
     app.post("/phasetwo", phaseTwo.formSubmit);
 }
