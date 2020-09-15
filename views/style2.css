@@ -146,11 +146,20 @@ form{
             left: 10px;
         }
 
-        .valueProp{
-            width: 100%;
+        .success{
+            position: static;
+            background: rgba(0, 0, 0, 0.75);
+            text-align: center;
+            font-size: 25px;
+            padding: 15px;
             margin: 0;
-            padding: 20px;
-            text-align: justify;
-            box-sizing: border-box;
         }
+
+    .valueProp{
+        width: 100%;
+        margin: 0;
+        padding: 20px;
+        text-align: justify;
+        box-sizing: border-box;
+    }
 }
