@@ -18,7 +18,7 @@ module.exports = {
         req.session.message = undefined;
         req.session.success = undefined;
 
-        return res.render("./phaseOne.ejs", data);
+        return res.render("./phaseOne2.ejs", data);
     },
 
     m5064: function(req, res){

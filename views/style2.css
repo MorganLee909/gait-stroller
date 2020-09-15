@@ -1,0 +1,91 @@
+*{margin:0;padding:0;}
+
+body{
+    background: rgb(250, 250, 234);
+    width: 100%;
+}
+
+h1{
+    font-size: 50px;
+    text-align: center;
+    margin: 15px 0;
+}
+
+h2{
+    text-align: justify;
+}
+
+img{
+    height: 65vh;
+    width: 100%;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.75);
+    width: 400px;
+    padding: 25px;
+    bottom: -150px;
+    margin-left: 25px;
+    border-radius: 10px;
+    color: white;
+}
+
+label{
+    display: flex;
+    justify-content: space-between;
+    width: 75%;
+}
+    
+    form > *{
+        margin: 10px;
+    }
+
+.centerImage{
+    position: relative;
+    width: 100%;
+    height: 65vh;
+}
+
+    .success{
+        position: absolute;
+        bottom: 100px;
+        margin-left: 50px;
+        font-size: 40px;
+        font-weight: bold;
+        color: yellow;
+    }
+
+    .subtitle{
+        font-size: 30px;
+        background: rgba(250, 250, 234, 0.9);
+        position: absolute;
+        right: 200px;
+        bottom: 100px;
+        padding: 25px;
+        border-radius: 5px;
+    }
+
+.bottom{
+    display: flex;
+    justify-content: right;
+}
+
+    .valueProp{
+        width: 65%;
+        margin: 15px 50px 0 0;
+    }
+
+        .valueProp h3{
+            font-size: 25px;
+            margin-bottom: 10px;
+        }
+
+        .valueProp p{
+            font-size: 20px;
+            line-height: 2;
+            text-align: justify;
+        }
