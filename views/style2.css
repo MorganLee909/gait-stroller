@@ -34,16 +34,16 @@ form{
     color: white;
 }
 
-label{
-    display: flex;
-    justify-content: space-between;
-    width: 75%;
-}
-    
     form > *{
         margin: 10px;
     }
 
+    label{
+        display: flex;
+        justify-content: space-between;
+        width: 75%;
+    }
+    
 .centerImage{
     position: relative;
     width: 100%;
@@ -89,3 +89,51 @@ label{
             line-height: 2;
             text-align: justify;
         }
+
+@media screen and (max-width: 1000px){
+    h1{
+        font-size: 35px;
+    }
+
+    form{
+        position: static;
+        margin: 0;
+        margin-top: -5px;
+        width: 100%;
+        box-sizing: border-box;
+        border-radius: 0;
+    }
+
+    label{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    img{
+        position: relative;
+        width: 193%;
+        left: -173px;
+    }
+
+    .centerImage{
+        height: inherit;
+        position: static;
+        overflow: hidden;
+    }
+
+        .subtitle{
+            text-align: center;
+            bottom: 30%;
+            font-size: 22px;
+            right: 10px;
+            left: 10px;
+        }
+
+        .valueProp{
+            width: 100%;
+            margin: 0;
+            padding: 20px;
+            text-align: justify;
+            box-sizing: border-box;
+        }
+}
