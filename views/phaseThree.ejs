@@ -11,75 +11,43 @@
         <% if(success === false){ %>
             <h2 class="error"><%=message%></h2>
         <% } %>
-        <header>
-            <h1>Headline that matches what was clicked</h1>
+        <h1>gaitSTROLLER</h1>
 
-            <h3>A supporting subheader to provide extra information</h3>
-        </header>
+        <div class="centerImage">
+            <img src="./Images/stroller1.jpg" alt="Gait Stroller">
 
-        <div class="mainContent">
-            <img src="./Images/Man_Yellow.png" alt="Gait Stroller">
+            <% if(success === true){ %>
+                <p class="success"><%=message%></p>
+            <% }else{ %>
+                <form action="/phasethree" method="post">
+                    <h2>Leave your name and email so we can keep you in the loop as we bring gaitStroller to market!</h2>
 
-            <div class="mainContentRight">
-                <p class="mainContentText">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                    <label>Name:
+                        <input type="text" name="name" required>
+                    </label>
 
-                <% if(success === true){ %>
-                    <h1 class="yellow"><%=message%></h1>
-                <% }else{ %>
-                    <h2>Learn More!</h2>
+                    <label>Email:
+                        <input type="email" name="email" required>
+                    </label>
 
-                    <form action="/phasethree" method="post">
-                        <label>Name:
-                            <input type="text" name="name" required>
-                        </label>
+                    <label>Interested as a gift?
+                        <input type="checkbox" name="gift">
+                    </label>
 
-                        <label>Email:
-                            <input type="email" name="email" required>
-                        </label>
+                    <input type="hidden" name="page" value="<%=page%>">
 
-                        <label>Interested as a gift?
-                            <input type="checkbox" name="gift">
-                        </label>
+                    <input class="button" class="button" type="submit" value="SUBMIT">
+                </form>
+            <% } %>
 
-                        <input type="hidden" name="page" value="<%=page%>">
-
-                        <input class="button" type="submit" value="SUBMIT">
-                    </form>
-                <% } %>
-            </div>
+            <p class="subtitle">A CATEGORY REVOLUTION</p>
         </div>
 
-        <div class="extraInfo">
-            <div class="infoItem">
-                <img src="./Images/Man_Yellow.png" alt="Gait Stroller">
+        <div class="bottom">
+            <div class="valueProp">
+                <h3>An all-in-one child-carrying stroller designed for runners, fitness walkers and bicycle commuters</h3>
 
-                <h2>Extra Info Here</h2>
-
-                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-            </div>
-
-            <div class="infoItem">
-                <img src="./Images/Man_Yellow.png" alt="Gait Stroller">
-
-                <h2>List Some Points</h2>
-
-                <ul>
-                    <li>Does things</li>
-
-                    <li>Sometimes doesn't things</li>
-
-                    <li>You decide!</li>
-
-                    <li>Lower mortality rate than suicide!</li>
-                </ul>
-            </div>
-
-            <div class="infoItem">
-                <img src="./Images/Man_Yellow.png" alt="Gait Stroller">
-
-                <h2>Extra Info Here</h2>
-
-                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                <p>With exceptional engineering, the gaitStroller competes against high-end jogging strollers and bike trailers. But the gaitStroller brings more. With pivoting and telescoping rails, the gaitStroller has a novel hybrid function. gaitStroller can be pulled, on 2 wheels, from a runner’s waist. This transforms the running experience as it enables a natural running stride.</p>
             </div>
         </div>
     </body>
