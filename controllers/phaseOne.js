@@ -128,9 +128,10 @@ module.exports = {
             .save()
             .then((phaseOne)=>{
                 req.session.message = "Thanks for signing up!";
-                req.sesssion.success = true;
+                req.session.success = true;
             })
             .catch((err)=>{
+                console.log(err);
                 req.session.message = "Unable to save your information, please try again";
                 req.session.success = false;
             })
