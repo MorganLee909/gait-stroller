@@ -9,49 +9,53 @@
         <link rel="stylesheet" href="./style.css">
     </head>
     <body>
-        <% if(success === false){ %>
-            <h2 class="error"><%=message%></h2>
-        <% } %>
-        <h1>gaitSTROLLER</h1>
-
-        <div class="centerImage">
-            <img src="./Images/stroller1.jpg" alt="Gait Stroller">
-
-            <% if(success === true){ %>
-                <p class="success"><%=message%></p>
-            <% }else{ %>
-                <form action="/phaseone" method="post">
-                    <img class="logo" src="./Images/blueStroller.jpg" alt="Gait Stroller Logo">
-
-                    <h2>stay in the loop <br> with gaitStroller</h2>
-
-                    <label>name:
-                        <input type="text" name="name" required>
-                    </label>
-
-                    <label>email:
-                        <input type="email" name="email" required>
-                    </label>
-
-                    <label>zip code:
-                        <input type="text" name="zipCode">
-                    </label>
-
-                    <input type="hidden" name="page" value="<%=page%>">
-
-                    <input class="button" class="button" type="submit" value="SUBMIT">
-                </form>
+        <div class="everything">
+            <% if(success === false){ %>
+                <h2 class="error"><%=message%></h2>
             <% } %>
 
-            <p class="subtitle">A CATEGORY REVOLUTION</p>
-        </div>
+            <div class="centerImage">
+                <h1>gaitSTROLLER</h1>
 
-        <div class="bottom">
-            <div class="valueProp">
-                <h3>An all-in-one child-carrying stroller designed for runners, fitness walkers and bicycle commuters</h3>
+                <img src="./Images/stroller1.jpg" alt="Gait Stroller">
 
-                <p>With exceptional engineering, the gaitStroller competes against high-end jogging strollers and bike trailers. But the gaitStroller brings more. With pivoting and telescoping rails, the gaitStroller has a novel hybrid function. gaitStroller can be pulled, on 2 wheels, from a runner’s waist. This transforms the running experience as it enables a natural running stride.</p>
+                <% if(success === true){ %>
+                    <p class="success"><%=message%></p>
+                <% }else{ %>
+                    <form action="/phaseone" method="post">
+                        <img class="logo" src="./Images/blueStroller.jpg" alt="Gait Stroller Logo">
+
+                        <h2>stay in the loop <br> with gaitStroller</h2>
+
+                        <label>name:
+                            <input type="text" name="name" required>
+                        </label>
+
+                        <label>email:
+                            <input type="email" name="email" required>
+                        </label>
+
+                        <label>zip code:
+                            <input type="text" name="zipCode">
+                        </label>
+
+                        <input type="hidden" name="page" value="<%=page%>">
+
+                        <input class="button" class="button" type="submit" value="SUBMIT">
+                    </form>
+                <% } %>
+
+                <p class="subtitle">A CATEGORY REVOLUTION</p>
             </div>
+
+            <div class="bottom">
+                <div class="valueProp">
+                    <h3>An all-in-one child-carrying stroller designed for runners, fitness walkers and bicycle commuters</h3>
+
+                    <p>With exceptional engineering, the gaitStroller competes against high-end jogging strollers and bike trailers. But the gaitStroller brings more. With pivoting and telescoping rails, the gaitStroller has a novel hybrid function. gaitStroller can be pulled, on 2 wheels, from a runner’s waist. This transforms the running experience as it enables a natural running stride.</p>
+                </div>
+            </div>
+
         </div>
     </body>
 </html>
