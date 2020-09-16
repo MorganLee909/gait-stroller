@@ -102,6 +102,11 @@ form{
         border-radius: 5px;
     }
 
+    .differentLabel{
+        display: flex;
+        justify-content: left;
+    }
+
     .subtitle{
         font-size: 20px;
         background: rgba(66, 191, 170, 0.7);
