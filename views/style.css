@@ -10,7 +10,8 @@ body{
 .everything{
     max-width: 1000px;
     background: white;
-    /* background: rgba(66, 191, 170, 0.075); */
+    background: rgb(241, 250, 249);
+    height: 100vh;
 }
 
 h2{
@@ -101,7 +102,7 @@ form{
     display: flex;
     padding-top: 10px;
     justify-content: space-between;
-    background: rgba(66, 191, 170, 0.075);
+    box-sizing: border-box;
 }
 
     .bottomLeft{

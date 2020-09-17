@@ -3,8 +3,8 @@
     <head>
         <meta charset="utf-8">
         <meta content="width=device-width, initial-scale=1" name="viewport"/>
-        <link rel="icon" type="img/png" href="./Images/Man_Yellow.png">
-        <title>Gait Stroller</title>
+        <link rel="icon" type="img/png" href="./Images/blueStroller.png">
+        <title>gaitStroller</title>
         <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="./style.css">
     </head>
@@ -13,18 +13,15 @@
             <% if(success === false){ %>
                 <h2 class="error"><%=message%></h2>
             <% } %>
-            
 
             <div class="centerImage">
-                <h1>gaitSTROLLER</h1>
-                
-                <img class="backgroundImage" src="./Images/stroller1.jpg" alt="Gait Stroller">
+                <img class="backgroundImage" src="./Images/stroller1.png" alt="Gait Stroller">
 
                 <% if(success === true){ %>
                     <p class="success"><%=message%></p>
                 <% }else{ %>
                     <form action="/phasetwo" method="post">
-                        <img class="logo" src="./Images/blueStroller.jpg" alt="Gait Stroller Logo">
+                        <img class="logo" src="./Images/blueStroller.png" alt="Gait Stroller Logo">
 
                         <h2>stay in the loop <br> with gaitStroller</h2>
 
@@ -45,17 +42,18 @@
                         <input class="button" class="button" type="submit" value="SUBMIT">
                     </form>
                 <% } %>
-
-                <p class="subtitle">A CATEGORY REVOLUTION</p>
             </div>
 
             <div class="bottom">
+                <div class="bottomLeft"></div>
+                
                 <div class="valueProp">
                     <h3>An all-in-one child-carrying stroller designed for runners, fitness walkers and bicycle commuters</h3>
 
                     <p>With exceptional engineering, the gaitStroller competes against high-end jogging strollers and bike trailers. But the gaitStroller brings more. With pivoting and telescoping rails, the gaitStroller has a novel hybrid function. gaitStroller can be pulled, on 2 wheels, from a runner’s waist. This transforms the running experience as it enables a natural running stride.</p>
                 </div>
             </div>
+
         </div>
     </body>
 </html>
