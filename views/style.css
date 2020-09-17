@@ -138,12 +138,6 @@ form{
         align-items: center;
     }
 
-    .backgroundImage{
-        position: relative;
-        width: 193%;
-        left: -173px;
-    }
-
     .centerImage{
         height: inherit;
         position: static;
