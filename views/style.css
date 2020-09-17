@@ -133,6 +133,10 @@ form{
         }
 
 @media screen and (max-width: 1000px){
+    .everything{
+        height: inherit;
+    }
+
     form{
         position: static;
         margin: 0;
