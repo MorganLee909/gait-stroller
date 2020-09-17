@@ -29,7 +29,7 @@ form{
     position: absolute;
     background: rgba(249, 249, 249, 0.9);
     border: 2px solid rgb(66, 191, 170);
-    padding: 35px;
+    padding: 0 35px 10px 35px;
     bottom: -150px;
     margin-left: 25px;
     border-radius: 10px;
@@ -41,10 +41,9 @@ form{
     }
 
     .logo{
-        max-height: 54px;
+        max-height: 100px;
         max-width: 100px;
         margin: 0;
-        opacity: 0.8;
     }
 
     label{
