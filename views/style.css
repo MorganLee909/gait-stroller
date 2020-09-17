@@ -4,12 +4,13 @@ body{
     display: flex;
     justify-content: center;
     font-family: 'Libre Baskerville', serif;
-    background: rgba(66, 191, 170, 0.03);
+    background: rgb(121, 126, 131);
 }
 
 .everything{
     max-width: 1000px;
-    background: rgba(66, 191, 170, 0.075);
+    background: white;
+    /* background: rgba(66, 191, 170, 0.075); */
 }
 
 h2{
@@ -100,6 +101,7 @@ form{
     height: 30vh;
     display: flex;
     justify-content: right;
+    background: rgba(66, 191, 170, 0.075);
 }
 
     .valueProp{
