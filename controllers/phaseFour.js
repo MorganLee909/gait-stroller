@@ -1,6 +1,8 @@
 const Activity = require("../models/activity.js");
 const PhaseFour = require("../models/phaseFour.js");
 
+const mailgun = require("mailgun-js")({apiKey: process.env.MG_GAITSTROLLER_APIKEY, domain: "mail.gaitstroller.com"});
+
 module.exports = {
     seattleNoSocial: function(req, res){
         new Activity({
@@ -91,6 +93,15 @@ module.exports = {
 
         phaseFour.save()
             .then((phaseFour)=>{
+                const mailgunData = {
+                    from: "gaitStroller <info@gaitstroller.com>",
+                    to: phaseOne.email,
+                    subject: "Thank you from gaitStroller!",
+                    text: `Thank you for your interest ${phaseOne.name}!  We will keep you up to date with any further developments.`
+                }
+
+                mailgun.messages().send(mailgunData, (error, body)=>{});
+                
                 req.session.message = "Thanks for signing up!";
                 req.session.success = true;
             })

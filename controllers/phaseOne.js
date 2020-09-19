@@ -133,7 +133,7 @@ module.exports = {
                     from: "gaitStroller <info@gaitstroller.com>",
                     to: phaseOne.email,
                     subject: "Thank you from gaitStroller!",
-                    text: `Hey man, I got the email set up so that we can email them automatically once they sign up.  Send me some content that you want me to add in place of this text here.`
+                    text: `Thank you for your interest ${phaseOne.name}!  We will keep you up to date with any further developments.`
                 }
 
                 mailgun.messages().send(mailgunData, (error, body)=>{});
