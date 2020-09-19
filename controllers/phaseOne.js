@@ -1,6 +1,8 @@
 const Activity = require("../models/activity.js");
 const PhaseOne = require("../models/phaseOne.js");
 
+const mailgun = require("mailgun-js")({apiKey: process.env.MG_GAITSTROLLER_APIKEY, domain: "mail.gaitstroller.com"});
+
 module.exports = {
     m2549: function(req, res){
         new Activity({
@@ -127,11 +129,19 @@ module.exports = {
         })
             .save()
             .then((phaseOne)=>{
+                const mailgunData = {
+                    from: "gaitStroller <info@gaitstroller.com>",
+                    to: phaseOne.email,
+                    subject: "Thank you from gaitStroller!",
+                    text: `Hey man, I got the email set up so that we can email them automatically once they sign up.  Send me some content that you want me to add in place of this text here.`
+                }
+
+                mailgun.messages().send(mailgunData, (error, body)=>{});
+
                 req.session.message = "Thanks for signing up!";
                 req.session.success = true;
             })
             .catch((err)=>{
-                console.log(err);
                 req.session.message = "Unable to save your information, please try again";
                 req.session.success = false;
             })
