@@ -14,9 +14,10 @@ body{
     height: 100vh;
 }
 
-h2{
+#formTitle{
     text-align: center;
-    font-size: 20px;
+    font-size: 30px;
+    margin-top: 0;
 }
 
 .backgroundImage{
@@ -96,6 +97,10 @@ form{
         display: flex;
         justify-content: left;
     }
+
+        .differentLabel > input{
+            margin-left: 25px;
+        }
 
 .bottom{
     height: 30vh;
