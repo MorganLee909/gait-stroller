@@ -138,6 +138,13 @@ module.exports = {
 
                 mailgun.messages().send(mailgunData, (error, body)=>{});
 
+                const mailgunList = mailgun.lists("info@mail.gaitstroller.com");
+                mailgunList.members().create({
+                    subscribed: true,
+                    address: phaseOne.email,
+                    name: phaseOne.name
+                }, (err, data)=>{});
+
                 req.session.message = "Thanks for signing up!";
                 req.session.success = true;
             })

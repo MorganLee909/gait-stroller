@@ -95,12 +95,19 @@ module.exports = {
             .then((phaseFour)=>{
                 const mailgunData = {
                     from: "gaitStroller <info@gaitstroller.com>",
-                    to: phaseOne.email,
+                    to: phaseFour.email,
                     subject: "Thank you from gaitStroller!",
-                    text: `Thank you for your interest ${phaseOne.name}!  We will keep you up to date with any further developments.`
+                    text: `Thank you for your interest ${phaseFour.name}!  We will keep you up to date with any further developments.`
                 }
 
                 mailgun.messages().send(mailgunData, (error, body)=>{});
+
+                const mailgunList = mailgun.lists("info@mail.gaitstroller.com");
+                mailgunList.members().create({
+                    subscribed: true,
+                    address: phaseFour.email,
+                    name: phaseFour.name
+                }, (err, data)=>{});
                 
                 req.session.message = "Thanks for signing up!";
                 req.session.success = true;

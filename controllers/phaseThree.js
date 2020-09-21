@@ -194,8 +194,14 @@ module.exports = {
                     subject: "Thank you from gaitStroller!",
                     text: `Thank you for your interest ${phaseThree.name}!  We will keep you up to date with any further developments.`
                 }
-        
                 mailgun.messages().send(mailgunData, (error, body)=>{});
+
+                const mailgunList = mailgun.lists("info@mail.gaitstroller.com");
+                mailgunList.members().create({
+                    subscribed: true,
+                    address: phaseThree.email,
+                    name: phaseThree.name
+                }, (err, data)=>{});
 
                 req.session.message = "Thanks for signing up!";
                 req.session.success = true;
