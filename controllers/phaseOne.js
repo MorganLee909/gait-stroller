@@ -133,11 +133,15 @@ module.exports = {
                     from: "gaitStroller <info@gaitstroller.com>",
                     to: phaseOne.email,
                     subject: "Thank you from gaitStroller!",
-                    text: `Thank you for your interest ${phaseOne.name}!  We will keep you up to date with any further developments.`
+                    text: `Thank you for your interest ${phaseOne.name}!  We will keep you up to date with any further developments.\n\n Sincerely,\n    gaitStroller`
                 }
 
-                mailgun.messages().send(mailgunData, (error, body)=>{});
+                mailgun.messages().send(mailgunData, (error, body)=>{
+                    console.log(error);
+                    console.log(body);
+                });
 
+                console.log("something");
                 const mailgunList = mailgun.lists("info@mail.gaitstroller.com");
                 mailgunList.members().create({
                     subscribed: true,
