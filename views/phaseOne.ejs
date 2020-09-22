@@ -15,7 +15,11 @@
             <% } %>
 
             <div class="centerImage">
-                <img class="backgroundImage" src="./Images/stroller1.png" alt="Gait Stroller">
+                <% if(page === "p1m2549b"){ %>
+                    <img class="backgroundImage" src="./Images/stroller2.jpg" alt="Gait Stroller">
+                <% }else{ %>
+                    <img class="backgroundImage" src="./Images/stroller1.png" alt="Gait Stroller">
+                <% } %>
 
                 <% if(success === true){ %>
                     <p class="success"><%=message%></p>

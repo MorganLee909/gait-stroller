@@ -4,11 +4,10 @@ const phaseThree = require("./controllers/phaseThree.js");
 const phaseFour = require("./controllers/phaseFour.js");
 
 module.exports = function(app){
-    app.get("/", (req, res)=>{
-        return res.redirect("/p1m2549");
-    });
+    app.get("/", phaseOne.main);
 
     app.get("/p1m2549", phaseOne.m2549);
+    app.get("/p1m2549b", phaseOne.m2549b);
     app.get("/p1m5064", phaseOne.m5064);
     app.get("/p1m65", phaseOne.m65);
     app.get("/p1w2549", phaseOne.w2549);

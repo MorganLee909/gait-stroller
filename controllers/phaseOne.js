@@ -4,6 +4,25 @@ const PhaseOne = require("../models/phaseOne.js");
 const mailgun = require("mailgun-js")({apiKey: process.env.MG_GAITSTROLLER_APIKEY, domain: "mail.gaitstroller.com"});
 
 module.exports = {
+    main: function(req, res){
+        new Activity({
+            ipAddr: req.header("x-forwarded-for") || req.connection.remoteAddress,
+            dateTime: new Date(),
+            pageVisited: "main"
+        }).save().catch(()=>{});
+
+        let data = {
+            page: "main",
+            message: req.session.message || undefined,
+            success: req.session.success
+        }
+
+        req.session.message = undefined;
+        req.session.success = undefined;
+
+        return res.render("./phaseOne.ejs", data);
+    },
+
     m2549: function(req, res){
         new Activity({
             ipAddr: req.header("x-forwarded-for") || req.connection.remoteAddress,
@@ -13,6 +32,25 @@ module.exports = {
 
         let data = {
             page: "p1m2549",
+            message: req.session.message || undefined,
+            success: req.session.success
+        }
+
+        req.session.message = undefined;
+        req.session.success = undefined;
+
+        return res.render("./phaseOne.ejs", data);
+    },
+
+    m2549b: function(req, res){
+        new Activity({
+            ipAddr: req.header("x-forwarded-for") || req.connection.remoteAddress,
+            dateTime: new Date(),
+            pageVisited: "p1m2549b"
+        }).save().catch(()=>{});
+
+        let data = {
+            page: "p1m2549b",
             message: req.session.message || undefined,
             success: req.session.success
         }
@@ -136,12 +174,8 @@ module.exports = {
                     text: `Thank you for your interest ${phaseOne.name}!  We will keep you up to date with any further developments.\n\n Sincerely,\n    gaitStroller`
                 }
 
-                mailgun.messages().send(mailgunData, (error, body)=>{
-                    console.log(error);
-                    console.log(body);
-                });
+                mailgun.messages().send(mailgunData, (error, body)=>{});
 
-                console.log("something");
                 const mailgunList = mailgun.lists("info@mail.gaitstroller.com");
                 mailgunList.members().create({
                     subscribed: true,
