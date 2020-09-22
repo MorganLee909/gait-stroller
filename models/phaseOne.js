@@ -4,7 +4,7 @@ const PhaseOneSchema = new mongoose.Schema({
     name: String,
     email: String,
     zipCode: String,
-    pageVisitied: String,
+    pageVisited: String,
     dateTime: Date,
     ipAddr: String
 });

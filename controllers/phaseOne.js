@@ -157,7 +157,6 @@ module.exports = {
     },
 
     formSubmit: function(req, res){
-        console.log(req.body.page);
         new PhaseOne({
             name: req.body.name,
             email: req.body.email,
@@ -168,7 +167,6 @@ module.exports = {
         })
             .save()
             .then((phaseOne)=>{
-                console.log(phaseOne);
                 const mailgunData = {
                     from: "gaitStroller <info@gaitstroller.com>",
                     to: phaseOne.email,
