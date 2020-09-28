@@ -9,7 +9,6 @@ body{
 
 .everything{
     max-width: 1000px;
-    background: white;
     background: rgb(241, 250, 249);
     height: 100vh;
 }
@@ -136,6 +135,22 @@ form{
             line-height: 1.8;
             text-align: justify;
         }
+
+footer{
+    padding: 15px;
+    padding-bottom: 0;
+    background: rgb(241, 250, 249);
+}
+
+    footer p{
+        padding: 10px;
+    }
+
+.liner{
+    border: 1px solid rgb(225, 225, 225);
+    width: 100%;
+    margin-bottom: 10px;
+}
 
 @media screen and (max-width: 1000px){
     .everything{
