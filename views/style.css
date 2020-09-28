@@ -15,7 +15,7 @@ body{
 
 #formTitle{
     text-align: center;
-    font-size: 30px;
+    font-size: 25px;
     margin-top: 0;
 }
 
@@ -36,6 +36,7 @@ form{
     margin-left: 25px;
     border-radius: 10px;
     color: black;
+    max-width: 280px;
 }
 
     form > *{
