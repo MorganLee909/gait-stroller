@@ -10,7 +10,9 @@
     </head>
     <body>
         <div class="content">
+            <a id="signupLink" href="#signup">SIGN UP!</a>
             <h1 id="title">gaitStroller</h1>
+            <h2 id="subTitle">a category revolution</h2>
             <img id="logo" src="./Images/blueStroller.png" alt="Logo">
 
             <img class="mainImg" src="./Images/runnerCompressed.jpg" alt="Gait Stroller Runner">
@@ -51,7 +53,7 @@
                 <img src="./Images/stroller2.jpg" alt="Runner">
             </div>
 
-            <form action="/phasethree" method="post">
+            <form id="signup" action="/phasethree" method="post">
                 <label>Name:
                     <input type="text" required>
                 </label>
@@ -61,11 +63,17 @@
 
     <script>
         let header = document.getElementById("title");
+        let subTitle = document.getElementById("subTitle");
         let distance = document.documentElement.scrollTop;
         let logo = document.getElementById("logo");
+        document.getElementById("signupLink").onclick = ()=>{
+            header.style.fontSize = `${75 - (250 / 5.5)}px`;
+        };
 
         if(distance < 250){
             header.style.fontSize = `${75 - (distance / 5.5)}px`;
+        }else{
+            subTitle.style.display = "none";
         }
 
         window.onscroll = ()=>{
@@ -80,6 +88,5 @@
                 logo.style.position = "static";
             }
         }
-
     </script>
 </html>

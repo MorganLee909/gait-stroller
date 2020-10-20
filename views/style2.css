@@ -9,6 +9,19 @@
     box-sizing: border-box;
 }
 
+    a{
+        position: fixed;
+        top: 25px;
+        right: 100px;
+        text-decoration: none;
+        color: black;
+        border: 2px solid black;
+        padding: 5px;
+        font-size: 20px;
+        font-weight: bold;
+        z-index: 10;
+    }
+
     h1{
         text-align: center;
         position: sticky;
@@ -17,6 +30,10 @@
         width: 100%;
         padding: 25px 0;
         background: rgb(227, 252, 251);
+    }
+
+    h2{
+        text-align: center;
     }
 
     #logo{
