@@ -95,7 +95,8 @@
             header.style.fontSize = `${defaultFont - (distance / shrinkMultiplier)}px`;
         }
 
-        window.onscroll = ()=>{
+        let scrollingActions = ()=>{
+            console.log("scrolly");
             let distance = document.documentElement.scrollTop;
             if(distance < 250){
                 header.style.fontSize = `${defaultFont - (distance / shrinkMultiplier)}px`;
@@ -107,5 +108,19 @@
                 logo.style.position = "static";
             }
         }
+
+        // return a throttled function
+        function waitForPause(ms, callback){
+            let timer;
+
+            return function() {
+                clearTimeout(timer);
+                timer = setTimeout(function() {
+                    callback();
+                }, ms);
+            };
+        }
+
+        window.onscroll = waitForPause(10, scrollingActions);
     </script>
 </html>
