@@ -83,15 +83,22 @@
         let subTitle = document.getElementById("subTitle");
         let distance = document.documentElement.scrollTop;
         let logo = document.getElementById("logo");
+        let defaultFont = 75;
+        let shrinkMultiplier = 5.5
+
+        if(window.screen.width <= 1000){
+            defaultFont = 50;
+            shrinkMultiplier = 12;
+        }
 
         if(distance < 250){
-            header.style.fontSize = `${75 - (distance / 5.5)}px`;
+            header.style.fontSize = `${defaultFont - (distance / shrinkMultiplier)}px`;
         }
 
         window.onscroll = ()=>{
             let distance = document.documentElement.scrollTop;
             if(distance < 250){
-                header.style.fontSize = `${75 - (distance / 5.5)}px`;
+                header.style.fontSize = `${defaultFont - (distance / shrinkMultiplier)}px`;
             }
 
             if(distance > 325){

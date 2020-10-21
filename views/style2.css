@@ -142,3 +142,45 @@
         footer p{
             padding: 10px;
         }
+
+@media screen and (max-width: 1250px){
+    form{
+        position: static;
+        margin: auto 0 0 0;
+    }
+
+}
+
+@media screen and (max-width: 1000px){
+    .content{
+        padding: 35vh 10px 0 10px;
+    }
+
+        .firstStuff{
+            flex-direction: column-reverse;
+            margin-bottom: 10px;
+        }
+
+            .firstStuff > *{
+                max-width: 100%;
+            }
+
+        .valProps{
+            flex-direction: column;
+            align-items: center;
+        }
+
+            .valProp{
+                width: 100%;
+            }
+
+                .valProp img{
+                    width: 35%;
+                    margin: 0 auto;
+                }
+        
+        #logo{
+            left: 10px;
+            max-height: 75px;
+        }
+}
