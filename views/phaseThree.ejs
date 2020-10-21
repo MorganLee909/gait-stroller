@@ -10,6 +10,8 @@
     </head>
     <body>
         <div class="content">
+            <header></header>
+
             <h1 id="title">gaitStroller</h1>
             <h2 id="subTitle" class="subTitle">a category revolution</h2>
             <img id="logo" src="./Images/blueStroller.png" alt="Logo">
@@ -84,8 +86,6 @@
 
         if(distance < 250){
             header.style.fontSize = `${75 - (distance / 5.5)}px`;
-        }else{
-            subTitle.style.display = "none";
         }
 
         window.onscroll = ()=>{
