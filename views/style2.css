@@ -46,6 +46,19 @@
         width: 100%;
     }
 
+        .success{
+            position: absolute;
+            bottom: 100px;
+            margin-left: 40px;
+            font-size: 30px;
+            font-weight: bold;
+            color: black;
+            background: rgba(249, 249, 249, 0.9);
+            border: 2px solid rgb(66, 191, 170);
+            padding: 10px;
+            border-radius: 5px;
+        }
+
         form{
             display: flex;
             flex-direction: column;
@@ -86,6 +99,7 @@
                 padding: 10px;
                 cursor: pointer;
                 transition: background 0.5s, color 0.5s;
+                text-decoration: none;
             }
         
                 .button:hover{
@@ -98,6 +112,14 @@
             max-width: 75%;
             max-height: 750px;
         }
+
+    .randomText{
+        margin: 0 0 25px 0;
+        font-size: 25px;
+        padding: 0 50px 25px 0;
+        border-bottom: 1px solid black;
+        text-align: center;
+    }
 
     .valProps{
         display: flex;
@@ -137,6 +159,7 @@
         border-top: 1px solid black;
         width: 100%;
         text-align: center;
+        margin-top: 25px;
     }
     
         footer p{
@@ -148,7 +171,6 @@
         position: static;
         margin: auto 0 0 0;
     }
-
 }
 
 @media screen and (max-width: 1000px){
@@ -164,6 +186,10 @@
             .firstStuff > *{
                 max-width: 100%;
             }
+
+        .randomText{
+            padding: 0;
+        }
 
         .valProps{
             flex-direction: column;

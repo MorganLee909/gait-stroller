@@ -179,6 +179,7 @@ module.exports = {
         let phaseThree = new PhaseThree({
             name: req.body.name,
             email: req.body.email,
+            zipCode: req.body.zipCode,
             pageVisited: req.body.page,
             dateTime: new Date(),
             ipAddr: req.header("x-forwarded-for") || req.connection.remoteAddress

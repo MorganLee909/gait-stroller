@@ -20,10 +20,10 @@
                 <% if(success === true){ %>
                     <p class="success"><%=message%></p>
                 <% }else{ %>
-                    <form action="/phasethree" method="post">
+                    <form id="form" action="/phasethree" method="post">
                         <img class="logo" src="./Images/blueStroller.png" alt="Gait Stroller Logo">
 
-                        <h2 id="formTitle">stay in the loop <br> with gaitStroller</h2>
+                        <h2 id="formTitle">Come Run With Us!</h2>
 
                         <label>name:
                             <input type="text" name="name" required>
@@ -31,6 +31,10 @@
 
                         <label>email:
                             <input type="email" name="email" required>
+                        </label>
+
+                        <label>zip code:
+                            <input type="text" name="zipCode" required>
                         </label>
 
                         <label class="differentLabel">interested as a gift?
@@ -45,6 +49,9 @@
 
                 <img class="mainImg" src="./Images/runnerCompressed.jpg" alt="Gait Stroller Runner">
             </div>
+
+            <p class="randomText">An all-in-one child-carrying stroller designed for runners, fitness walkers and bicycle commuters.
+                With exceptional engineering, the gaitStroller competes against high-end jogging strollers and bike trailers. But the gaitStroller brings more. With pivoting and telescoping rails, the gaitStroller has a novel hybrid function. gaitStroller can be pulled, on two wheels, from a runner’s waist. This transforms the running experience as it enables a natural running stride.</p>
 
             <div class="valProps">
                 <div class="valProp">
@@ -71,6 +78,8 @@
                     <p>remember when running strollers were guaranteed to take up valuable trunk or storage space? The gaitStroller folds into its storage configuration and leaves a flat surface for storage. Our stroller is durable: pack it however you want and stack on it whatever you need to complete your day. Gone are the days of moving the stroller to go on a day trip or run errands.</p>
                 </div>
             </div>
+
+            <a class="button" href="#form">LEARN MORE</a>
 
             <footer>
                 <p>gaitStroller &copy;2020 | Seattle, WA

@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const PhaseThreeSchema = new mongoose.Schema({
     name: String,
     email: String,
+    zipCode: String,
     gift: Boolean,
     pageVisited: String,
     dateTime: Date,
