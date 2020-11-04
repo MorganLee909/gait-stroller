@@ -20,7 +20,7 @@ module.exports = {
         req.session.message = undefined;
         req.session.success = undefined;
 
-        return res.render("./phaseOne.ejs", data);
+        return res.render("./phaseThree.ejs", data);
     },
 
     m2549: function(req, res){
