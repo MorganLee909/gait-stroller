@@ -212,6 +212,9 @@ module.exports = {
                 req.session.success = false;
             })
             .finally(()=>{
+                if(req.body.page === "main"){
+                    return res.redirect("/");
+                }
                 return res.redirect(`/${req.body.page}`);
             });
     }
