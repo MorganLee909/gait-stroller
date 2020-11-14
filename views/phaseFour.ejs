@@ -6,24 +6,24 @@
         <link rel="icon" type="img/png" href="./Images/blueStroller.png">
         <title>gaitStroller</title>
         <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" href="./style2.css">
     </head>
     <body>
-        <div class="everything">
-            <% if(success === false){ %>
-                <h2 class="error"><%=message%></h2>
-            <% } %>
+        <div class="content">
+            <header></header>
 
-            <div class="centerImage">
-                <img class="backgroundImage" src="./Images/stroller1.png" alt="Gait Stroller">
+            <h1 id="title">gaitStroller</h1>
+            <h2 id="subTitle" class="subTitle">a category revolution</h2>
+            <img id="logo" src="./Images/blueStroller.png" alt="Logo">
 
+            <div class="firstStuff">
                 <% if(success === true){ %>
                     <p class="success"><%=message%></p>
                 <% }else{ %>
-                    <form action="/phasefour" method="post">
+                    <form id="form" action="/phasefour" method="post">
                         <img class="logo" src="./Images/blueStroller.png" alt="Gait Stroller Logo">
 
-                        <h2 id="formTitle">stay in the loop <br> with gaitStroller</h2>
+                        <h2 id="formTitle">Come Run With Us!</h2>
 
                         <label>name:
                             <input type="text" name="name" required>
@@ -31,6 +31,10 @@
 
                         <label>email:
                             <input type="email" name="email" required>
+                        </label>
+
+                        <label>zip code:
+                            <input type="text" name="zipCode" required>
                         </label>
 
                         <label class="differentLabel">interested as a gift?
@@ -42,21 +46,90 @@
                         <input class="button" class="button" type="submit" value="SUBMIT">
                     </form>
                 <% } %>
+
+                <img class="mainImg" src="./Images/runnerCompressed.jpg" alt="Gait Stroller Runner">
             </div>
 
-            <div class="bottom">
-                <div class="bottomLeft"></div>
-                
-                <div class="valueProp">
-                    <h3>An all-in-one child-carrying stroller designed for runners, fitness walkers and bicycle commuters</h3>
+            <p class="randomText">An all-in-one child-carrying stroller designed for runners, fitness walkers and bicycle commuters.
+                With exceptional engineering, the gaitStroller competes against high-end jogging strollers and bike trailers. But the gaitStroller brings more. With pivoting and telescoping rails, the gaitStroller has a novel hybrid function. gaitStroller can be pulled, on two wheels, from a runner’s waist. This transforms the running experience as it enables a natural running stride.</p>
 
-                    <p>With exceptional engineering, the gaitStroller competes against high-end jogging strollers and bike trailers. But the gaitStroller brings more. With pivoting and telescoping rails, the gaitStroller has a novel hybrid function. gaitStroller can be pulled, on two wheels, from a runner’s waist. This transforms the running experience as it enables a natural running stride.</p>
+            <div class="valProps">
+                <div class="valProp">
+                    <img src="./Images/small2.png" alt="Benefit One">
+
+                    <h3>hands-free running with your child</h3>
+
+                    <p>don’t sacrifice your natural running stride because of your stoller. take your child along for the ride! speed training, fartleks, and distance runs can now be completed with your child in tow. Taking your training buddy for all types of training runs has never been easier. Let your child enjoy watching their parent train while enjoying the ride!</p>
+                </div>
+
+                <div class="valProp">
+                    <img src="./Images/small1.png" alt="Benefit Two">
+
+                    <h3>from pull to push with the click of a button</h3>
+
+                    <p>there will be times when you want to push your child in a traditional stroller. The gaitStroller changes from pull to push with the simple click of a button. You can even do it in the middle of a run if your plans change or you run into a friend. No extra equipment or attachments are required: just one simple click.</p>
+                </div>
+
+                <div class="valProp">
+                    <img src="./Images/small3.png" alt="Benefit Three">
+
+                    <h3>a minimal storage footprint</h3>
+
+                    <p>remember when running strollers were guaranteed to take up valuable trunk or storage space? The gaitStroller folds into its storage configuration and leaves a flat surface for storage. Our stroller is durable: pack it however you want and stack on it whatever you need to complete your day. Gone are the days of moving the stroller to go on a day trip or run errands.</p>
                 </div>
             </div>
 
+            <a class="button" href="#form">LEARN MORE</a>
+
             <footer>
-                <p>gaitStroller 2020 | Seattle, WA | <a href="mailto:info@gaitstroller.com">Contact Us</a></p>
+                <p>gaitStroller &copy;2020 | Seattle, WA
             </footer>
         </div>
     </body>
+
+    <script>
+        let header = document.getElementById("title");
+        let subTitle = document.getElementById("subTitle");
+        let distance = document.documentElement.scrollTop;
+        let logo = document.getElementById("logo");
+        let defaultFont = 75;
+        let shrinkMultiplier = 5.5
+
+        if(window.screen.width <= 1000){
+            defaultFont = 50;
+            shrinkMultiplier = 12;
+        }
+
+        if(distance < 250){
+            header.style.fontSize = `${defaultFont - (distance / shrinkMultiplier)}px`;
+        }
+
+        let scrollingActions = ()=>{
+            console.log("scrolly");
+            let distance = document.documentElement.scrollTop;
+            if(distance < 250){
+                header.style.fontSize = `${defaultFont - (distance / shrinkMultiplier)}px`;
+            }
+
+            if(distance > 325){
+                logo.style.position = "fixed";
+            }else{
+                logo.style.position = "static";
+            }
+        }
+
+        // return a throttled function
+        function waitForPause(ms, callback){
+            let timer;
+
+            return function() {
+                clearTimeout(timer);
+                timer = setTimeout(function() {
+                    callback();
+                }, ms);
+            };
+        }
+
+        window.onscroll = waitForPause(10, scrollingActions);
+    </script>
 </html>
